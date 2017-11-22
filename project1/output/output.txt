@@ -1,0 +1,340 @@
+test ptree
+
+root@generic:/data/misc # ./test_ptree                                         
+init,1,1,0,45,2,0
+	ueventd,45,1,1,0,62,0
+	logd,62,1,1,0,63,1036
+	vold,63,1,1,0,68,0
+	healthd,68,1,1,0,69,0
+	lmkd,69,1,1,0,70,0
+	servicemanager,70,1,1,0,71,1000
+	surfaceflinger,71,1,1,0,77,1000
+	qemud,77,1,1,0,80,0
+	sh,80,1,1,0,81,2000
+	adbd,81,1,1,867,82,0
+		sh,867,1,81,1075,0,0
+			test_ptree,1075,0,867,0,0,0
+	netd,82,1,1,0,83,0
+	debuggerd,83,1,1,0,84,0
+	rild,84,1,1,0,85,1001
+	drmserver,85,1,1,0,86,1019
+	mediaserver,86,1,1,0,87,1013
+	installd,87,1,1,0,90,0
+	keystore,90,1,1,0,91,1017
+	main,91,1,1,258,92,0
+		system_server,258,1,91,0,494,1000
+		externalstorage,494,1,91,0,672,10006
+		putmethod.latin,672,1,91,0,690,10032
+		m.android.phone,690,1,91,0,695,1001
+		droid.launcher3,695,1,91,0,724,10007
+		d.process.acore,724,1,91,0,775,10002
+		m.android.music,775,1,91,0,807,10035
+		d.process.media,807,1,91,0,830,10005
+		id.printspooler,830,1,91,0,887,10040
+		ndroid.systemui,887,1,91,0,936,10013
+		.quicksearchbox,936,1,91,0,0,10042
+	gatekeeperd,92,1,1,0,95,1000
+	perfprofd,95,1,1,0,96,0
+	fingerprintd,96,1,1,0,0,1000
+kthreadd,2,1,0,3,0,0
+	ksoftirqd/0,3,1,2,0,4,0
+	kworker/0:0,4,1,2,0,5,0
+	kworker/u:0,5,1,2,0,6,0
+	khelper,6,1,2,0,7,0
+	sync_supers,7,1,2,0,8,0
+	bdi-default,8,1,2,0,9,0
+	kblockd,9,1,2,0,10,0
+	rpciod,10,1,2,0,11,0
+	kworker/0:1,11,1,2,0,12,0
+	kswapd0,12,1,2,0,13,0
+	fsnotify_mark,13,1,2,0,14,0
+	crypto,14,1,2,0,25,0
+	kworker/u:1,25,1,2,0,30,0
+	mtdblock0,30,1,2,0,35,0
+	mtdblock1,35,1,2,0,40,0
+	mtdblock2,40,1,2,0,41,0
+	binder,41,1,2,0,42,0
+	deferwq,42,1,2,0,43,0
+	kworker/u:2,43,1,2,0,44,0
+	mmcqd/0,44,1,2,0,47,0
+	jbd2/mtdblock0-,47,1,2,0,48,0
+	ext4-dio-unwrit,48,1,2,0,49,0
+	kworker/0:2,49,1,2,0,52,0
+	flush-31:1,52,1,2,0,54,0
+	jbd2/mtdblock1-,54,1,2,0,55,0
+	ext4-dio-unwrit,55,1,2,0,58,0
+	flush-31:2,58,1,2,0,60,0
+	jbd2/mtdblock2-,60,1,2,0,61,0
+	ext4-dio-unwrit,61,1,2,0,76,0
+	kauditd,76,1,2,0,829,0
+	flush-179:0,829,1,2,0,0,0
+
+
+test parent_child 
+
+root@generic:/data/misc # ./parent_child                                       
+515021910459Parent is 1076
+515021910459Child is 1077
+init,1,1,0,45,2,0
+	ueventd,45,1,1,0,62,0
+	logd,62,1,1,0,63,1036
+	vold,63,1,1,0,68,0
+	healthd,68,1,1,0,69,0
+	lmkd,69,1,1,0,70,0
+	servicemanager,70,1,1,0,71,1000
+	surfaceflinger,71,1,1,0,77,1000
+	qemud,77,1,1,0,80,0
+	sh,80,1,1,0,81,2000
+	adbd,81,1,1,867,82,0
+		sh,867,1,81,1076,0,0
+			parent_child,1076,1,867,1077,0,0
+				test_ptree,1077,0,1076,0,0,0
+	netd,82,1,1,0,83,0
+	debuggerd,83,1,1,0,84,0
+	rild,84,1,1,0,85,1001
+	drmserver,85,1,1,0,86,1019
+	mediaserver,86,1,1,0,87,1013
+	installd,87,1,1,0,90,0
+	keystore,90,1,1,0,91,1017
+	main,91,1,1,258,92,0
+		system_server,258,1,91,0,494,1000
+		externalstorage,494,1,91,0,672,10006
+		putmethod.latin,672,1,91,0,690,10032
+		m.android.phone,690,1,91,0,695,1001
+		droid.launcher3,695,1,91,0,724,10007
+		d.process.acore,724,1,91,0,775,10002
+		m.android.music,775,1,91,0,807,10035
+		d.process.media,807,1,91,0,830,10005
+		id.printspooler,830,1,91,0,887,10040
+		ndroid.systemui,887,1,91,0,936,10013
+		.quicksearchbox,936,1,91,0,0,10042
+	gatekeeperd,92,1,1,0,95,1000
+	perfprofd,95,1,1,0,96,0
+	fingerprintd,96,1,1,0,0,1000
+kthreadd,2,1,0,3,0,0
+	ksoftirqd/0,3,1,2,0,4,0
+	kworker/0:0,4,1,2,0,5,0
+	kworker/u:0,5,1,2,0,6,0
+	khelper,6,1,2,0,7,0
+	sync_supers,7,1,2,0,8,0
+	bdi-default,8,1,2,0,9,0
+	kblockd,9,1,2,0,10,0
+	rpciod,10,1,2,0,11,0
+	kworker/0:1,11,1,2,0,12,0
+	kswapd0,12,1,2,0,13,0
+	fsnotify_mark,13,1,2,0,14,0
+	crypto,14,1,2,0,25,0
+	kworker/u:1,25,1,2,0,30,0
+	mtdblock0,30,1,2,0,35,0
+	mtdblock1,35,1,2,0,40,0
+	mtdblock2,40,1,2,0,41,0
+	binder,41,1,2,0,42,0
+	deferwq,42,1,2,0,43,0
+	kworker/u:2,43,1,2,0,44,0
+	mmcqd/0,44,1,2,0,47,0
+	jbd2/mtdblock0-,47,1,2,0,48,0
+	ext4-dio-unwrit,48,1,2,0,49,0
+	kworker/0:2,49,1,2,0,52,0
+	flush-31:1,52,1,2,0,54,0
+	jbd2/mtdblock1-,54,1,2,0,55,0
+	ext4-dio-unwrit,55,1,2,0,58,0
+	flush-31:2,58,1,2,0,60,0
+	jbd2/mtdblock2-,60,1,2,0,61,0
+	ext4-dio-unwrit,61,1,2,0,76,0
+	kauditd,76,1,2,0,829,0
+	flush-179:0,829,1,2,0,0,0
+Child process finished, parent process exited!
+
+test BuggerBuddies problem for different input
+
+root@generic:/data/misc # ./BurgerBuddies 5 6 1                                
+USAGE: YOU NEED TO INPUT FOUR ARGUMENTS!!! 
+
+root@generic:/data/misc # ./BurgerBuddies 2 4 40 -6                        
+INVALID ARGUMENTS!!!
+
+root@generic:/data/misc # ./BurgerBuddies 5 10 20 5                            
+Cooks [5], Cashiers [10], Customers [20] 
+Begin Run
+Customer [16] comes.
+Cashier [8] accepts an order.
+Customer [3] comes.
+Customer [18] comes.
+Cashier [10] accepts an order.
+Customer [8] comes.
+Customer [11] comes.
+Customer [12] comes.
+Customer [20] comes.
+Customer [5] comes.
+Customer [19] comes.
+Customer [1] comes.
+Customer [2] comes.
+Customer [4] comes.
+Customer [7] comes.
+Customer [10] comes.
+Customer [15] comes.
+Customer [9] comes.
+Customer [13] comes.
+Customer [14] comes.
+Customer [17] comes.
+Customer [6] comes.
+Cashier [7] accepts an order.
+Cashier [6] accepts an order.
+Cashier [5] accepts an order.
+Cashier [4] accepts an order.
+Cashier [3] accepts an order.
+Cashier [2] accepts an order.
+Cashier [1] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cashier [8] takes a burger to customer.
+Cook [4] makes a burger.
+Cashier [10] takes a burger to customer.
+Cashier [8] accepts an order.
+Cook [5] makes a burger.
+Cook [3] makes a burger.
+Cashier [7] takes a burger to customer.
+Cashier [6] takes a burger to customer.
+Cook [2] makes a burger.
+Cook [4] makes a burger.
+Cook [5] makes a burger.
+Cook [1] makes a burger.
+Cashier [5] takes a burger to customer.
+Cashier [4] takes a burger to customer.
+Cashier [3] takes a burger to customer.
+Cashier [2] takes a burger to customer.
+Cook [3] makes a burger.
+Cashier [7] accepts an order.
+Cashier [7] takes a burger to customer.
+Cashier [6] accepts an order.
+Cook [2] makes a burger.
+Cook [4] makes a burger.
+Cook [5] makes a burger.
+Cook [1] makes a burger.
+Cashier [5] accepts an order.
+Cashier [5] takes a burger to customer.
+Cashier [4] accepts an order.
+Cashier [4] takes a burger to customer.
+Cashier [1] takes a burger to customer.
+Cashier [8] takes a burger to customer.
+Cook [3] makes a burger.
+Cook [2] makes a burger.
+Cook [4] makes a burger.
+Cook [5] makes a burger.
+Cashier [6] takes a burger to customer.
+Cook [3] makes a burger.
+Cook [2] makes a burger.
+End Run
+
+root@generic:/data/misc # ./BurgerBuddies 10 5 20 10                           
+Cooks [10], Cashiers [5], Customers [20] 
+Begin Run
+Cook [8] makes a burger.
+Cook [8] makes a burger.
+Cook [8] makes a burger.
+Cook [8] makes a burger.
+Cook [8] makes a burger.
+Cook [7] makes a burger.
+Cook [8] makes a burger.
+Cook [7] makes a burger.
+Cook [6] makes a burger.
+Cook [8] makes a burger.
+Customer [1] comes.
+Customer [2] comes.
+Customer [3] comes.
+Customer [4] comes.
+Customer [5] comes.
+Customer [6] comes.
+Customer [7] comes.
+Customer [8] comes.
+Customer [9] comes.
+Customer [10] comes.
+Customer [11] comes.
+Customer [12] comes.
+Customer [13] comes.
+Customer [14] comes.
+Customer [15] comes.
+Customer [16] comes.
+Customer [17] comes.
+Customer [18] comes.
+Customer [19] comes.
+Customer [20] comes.
+Cashier [1] accepts an order.
+Cashier [1] takes a burger to customer.
+Cook [5] makes a burger.
+Cashier [2] accepts an order.
+Cashier [2] takes a burger to customer.
+Cook [4] makes a burger.
+Cashier [3] accepts an order.
+Cashier [3] takes a burger to customer.
+Cook [5] makes a burger.
+Cashier [4] accepts an order.
+Cashier [4] takes a burger to customer.
+Cook [3] makes a burger.
+Cashier [5] accepts an order.
+Cashier [5] takes a burger to customer.
+Cook [2] makes a burger.
+Cashier [1] accepts an order.
+Cashier [1] takes a burger to customer.
+Cook [1] makes a burger.
+Cashier [3] accepts an order.
+Cashier [3] takes a burger to customer.
+Cook [7] makes a burger.
+Cashier [4] accepts an order.
+Cashier [4] takes a burger to customer.
+Cook [8] makes a burger.
+Cashier [5] accepts an order.
+Cashier [5] takes a burger to customer.
+Cashier [1] accepts an order.
+Cashier [1] takes a burger to customer.
+Cashier [4] accepts an order.
+Cashier [4] takes a burger to customer.
+Cook [6] makes a burger.
+Cook [4] makes a burger.
+Cashier [3] accepts an order.
+Cashier [3] takes a burger to customer.
+Cashier [3] accepts an order.
+Cashier [3] takes a burger to customer.
+Cashier [1] accepts an order.
+Cashier [1] takes a burger to customer.
+Cashier [4] accepts an order.
+Cashier [4] takes a burger to customer.
+Cook [6] makes a burger.
+Cook [4] makes a burger.
+Cashier [2] accepts an order.
+Cashier [2] takes a burger to customer.
+Cook [5] makes a burger.
+Cook [3] makes a burger.
+Cook [1] makes a burger.
+Cashier [3] accepts an order.
+Cashier [3] takes a burger to customer.
+Cashier [1] accepts an order.
+Cashier [1] takes a burger to customer.
+Cashier [4] accepts an order.
+Cashier [4] takes a burger to customer.
+Cook [6] makes a burger.
+Cashier [2] accepts an order.
+Cashier [2] takes a burger to customer.
+Cook [4] makes a burger.
+Cook [5] makes a burger.
+Cook [3] makes a burger.
+Cook [1] makes a burger.
+End Run
+
