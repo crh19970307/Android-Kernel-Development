@@ -6,7 +6,7 @@ This is the code for the project course operating system.
 Main contribution:
 * Write a new system call ptree which prints the entire process tree (in DFS order).
 * Write a program to simulate *Bugger Buddies Problem*.
-* Map a target process's Page Tableand dump the page table entries of a process in given range.
+* Map a target process's Page Table and dump the page table entries of a process in given range.
 * Change Linux Page Replacement Algorithm.
 ----
 ## Usage
